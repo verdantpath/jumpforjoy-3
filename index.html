@@ -17,18 +17,6 @@
 
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 		<script src="scripts/my-scripts.js"></script>
-		<script>
-			$(document).ready(function() {
-				$(".guess_box").click( function() {
-					$(".guess_box p").remove();
-					var my_num = Math.floor((Math.random()*5) + 5);
-					var discount = "<p>Your Discount is "+my_num+"%</p>";
-					$(this).append(discount);
-					$('div.guess_box').each(function() {
-						$(this).off('click');
-					});
-				});
-			});
-		</script>
+		
 	</body>
 </html>
