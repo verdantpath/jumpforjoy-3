@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  function getRandomNumber(num) {
+  function getRandom(num) {
     var myNum = Math.floor(Math.random() * num);
     return myNum;
   }
@@ -8,18 +8,26 @@ $(document).ready(function() {
     $('.guess_box').each(function(index, value) {
       if(numRand == index) {
         $(this).append('<span id="has_discount"></span>');
+        console.log("discount added");
         return false;
       }
     });
   }
-  $(".guess_box").click( checkForCode );
+  hideCode();
+  // $(".guess_box").click( checkForCode );
   function checkForCode() {
-    $(".guess_box p").remove();
-    var myNum = Math.floor((Math.random()*5) + 5);
-    var discount = "<p>Your Discount is "+myNum+"%</p>";
+    var discount;
+    if($.contains(this, document.getElementById("has_discount"))) {
+      var myNum = getRandom(5);
+      discount = "<p>Your Discount is " + myNum + "%</p>";
+    } else {
+      discount = "<p>Sorry, no discount this time!</p>";
+    }
+
     $(this).append(discount);
     $('div.guess_box').each(function() {
       $(this).off('click');
     });
   }
+  $(".guess_box").on('click', checkForCode);
 });
