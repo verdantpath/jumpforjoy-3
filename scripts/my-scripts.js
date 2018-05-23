@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $(".guess_box").on('click', checkForCode);
   function getRandom(num) {
     var myNum = Math.floor(Math.random() * num);
     return myNum;
@@ -29,5 +30,4 @@ $(document).ready(function() {
       $(this).off('click');
     });
   }
-  $(".guess_box").on('click', checkForCode);
 });
