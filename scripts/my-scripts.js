@@ -29,6 +29,7 @@ $(document).ready(function() {
     var discount;
     // Conditional logic to see if the user found the discount code
     // *this* refers to the current element, the one that called the function, in other words the .guess_box that was clicked
+    // the *contains8 method looks to see if the .guess_box that was clicked has a child with an id of "has_discount"
     if($.contains(this, document.getElementById("has_discount"))) {
       var myNum = getRandom(5);
       discount = "<p>Your Discount is " + myNum + "%</p>";
