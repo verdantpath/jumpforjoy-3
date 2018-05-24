@@ -36,8 +36,9 @@ $(document).ready(function() {
     } else {
       discount = "<p>Sorry, no discount this time!</p>";
     }
-
+    // Adds the discount message to the .guess_box that was clicked
     $(this).append(discount);
+    // Ensures that the discount message is only shown once
     $('div.guess_box').each(function() {
       $(this).off('click');
     });
