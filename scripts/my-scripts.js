@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
   }
 
-  // Call the named function
+  // Call the function add #has_discount to a random .guess_box
   hideCode();
 
   // Another named function that tells you if you clicked the right .guess_box and what the discount is
