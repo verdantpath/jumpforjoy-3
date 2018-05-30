@@ -27,6 +27,7 @@ $(document).ready(function() {
   // Another named function that tells you if you clicked the right .guess_box and what the discount is
   function checkForCode() {
     var discount;
+    
     // Conditional logic to see if the user found the discount code
     // *this* refers to the current element, the one that called the function, in other words the .guess_box that was clicked
     // the *contains8 method looks to see if the .guess_box that was clicked has a child with an id of "has_discount"
