@@ -21,6 +21,8 @@ $(document).ready(function() {
       if(numRand == index) {
         $(this).append('<span id="has_discount"></span>');
         // console.log("discount added");
+
+        // tells the loop to stop executing and move on
         return false;
       }
     });
