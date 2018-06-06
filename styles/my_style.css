@@ -18,3 +18,9 @@ div{
 	background-color: gray;
 	height: 500px;
 }
+.hover {
+	border: solid #f00 3px;
+}
+.no-hover {
+	border: solid #000 3px;
+}
