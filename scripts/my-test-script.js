@@ -8,4 +8,15 @@ $(document).ready(function() {
     $("#header").removeClass("hover");
     $("#header").addClass("no-hover");
   });
+
+  $(".guess_box").hover(
+    function() {
+      $("#header").addClass("hover");
+      $("#header").removeClass("no-hover");
+      console.log('mouse in');
+    },
+    function() {
+      $("#header").removeClass("hover");
+      $("#header").addClass("no-hover");
+  });
 });

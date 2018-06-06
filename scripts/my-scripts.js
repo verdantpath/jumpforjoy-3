@@ -51,4 +51,16 @@ $(document).ready(function() {
       $(this).off('click');
     });
   }
+
+  $(".guess_box").hover(
+    function() {
+      $(this).addClass("hover");
+      $(this).removeClass("no-hover");
+      console.log('mouse in');
+    },
+    function() {
+      $(this).removeClass("hover");
+      $(this).addClass("no-hover");
+      console.log('mouse out');
+  });
 });
