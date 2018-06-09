@@ -39,18 +39,35 @@ $(document).ready(function() {
     // *this* refers to the current element, the one that called the function, in other words the .guess_box that was clicked
     // the *contains8 method looks to see if the .guess_box that was clicked has a child with an id of "has_discount"
     if($.contains(this, document.getElementById("has_discount"))) {
-      var myNum = getRandom(5);
-      discount = "<p>Your Discount is " + myNum + "%</p>";
+      var myNum = getRandom(100);
+      discount = "<p>Your Code: CODE" + myNum + "</p>";
     } else {
       discount = "<p>Sorry, no discount this time!</p>";
     }
+
     // Adds the discount message to the .guess_box that was clicked
-    $(this).append(discount);
+    //$(this).append(discount);
+
     // Ensures that the discount message is only shown once
     $('div.guess_box').each(function() {
       $(this).off('click');
+
     });
+
+    $(".guess_box").each(function() {
+      if ($.contains(this, document.getElementById("has_discount"))) {
+        $(this).addClass("discount");
+      } else {
+        $(this).addClass("no-discount");
+      }
+      $(this).off();
+    });
+
+    $("#result").append(discount);
+
   }
+
+
 
   $(".guess_box").hover(
     function() {
